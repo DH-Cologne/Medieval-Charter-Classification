@@ -1,5 +1,6 @@
 # Medieval-Charter-Classification
 Program that allows to detect and classify the segments of medieval royal charters according to their diplomatic formulae.
+Dieses Material steht unter der Creative-Commons-Lizenz Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International. Um eine Kopie dieser Lizenz zu sehen, besuchen Sie http://creativecommons.org/licenses/by-nc-sa/4.0/.
 
 # Erkennung und Klassifizierung der Formularbestandteile mittelalterlicher Königsurkunden #
 Dieses Repository enthält den Code für ein Programm, welches mittelalterliche Königsurkunden, die in Form von CEI-XML-Dateien vorliegen, in die Abschnitte des Urkundenformulars zerlegen, diese klassifizieren und annotieren kann.
