@@ -1,0 +1,25 @@
+A(?=ugust([us]|i)), a
+R(?=om), r
+E(?=go), e
+A(?=men), a
+A(?=nno), a
+[JI](?=mp(\.|er)), i
+K(?=al(\.|end)), k
+N(?=on(\.|[aei]s)), n
+[JI](?=d(\.|[ie]s)), i
+[JI](?=an(\.|uar)), i
+F(?=eb(r\.|\.|ruar)), f
+M(?=ar(\.|c\.|(c|ch)i)), m
+A(?=pr(\.|il)), a
+M(?=ai(\.|i)), m
+[IJ](?=un(\.|i)), i
+[IJ](?=ul(\.|i)), i
+S(?=ept(\.|emb*)), s
+O(?=ct(\.|[uo]b)), o
+N(?=o[uv](\.|emb*)), n
+D(?=ec(\.|emb*)), d
+D(?=at(\.|um)), d
+A(?=ct(\.|um)), a
+D(?=e[uoi]s*((?!\w)|(?=$))), d
+[IJ](?=es[uo]s*),i
+[Cc](?=h*rist),c
