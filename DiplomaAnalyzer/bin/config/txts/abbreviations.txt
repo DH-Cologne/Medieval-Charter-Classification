@@ -1,0 +1,6 @@
+kal\.,kalendis, false
+id\.,idis, false
+kl\.,kalendis, false
+non\., nonis, false
+recog\., recognovi, true
+&, et, false
