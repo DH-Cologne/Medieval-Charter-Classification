@@ -2,40 +2,40 @@
 Tolerance for position based label probability: 1
 Use bigrams instead of tokens: false
 Vectorizing method: binary
-Test basis: 83 diplomas with 3093 sentences
+Test basis: 83 diplomas with 3098 sentences
  
  
 **CONFUSION MATRIX**
    true\pred   | invocatio     | intitulatio   | inscriptio    | arenga        | publicatio    | narratio      | dispositio    | sanctio       | corroboratio  | subscriptio   | datatio       | apprecatio    |
-invocatio      | 135           | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             |
+invocatio      | 136           | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             |
 intitulatio    | 0             | 79            | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             |
 inscriptio     | 0             | 0             | 0             | 0             | 0             | 0             | 1             | 0             | 0             | 0             | 0             | 0             |
-arenga         | 0             | 1             | 0             | 91            | 1             | 17            | 15            | 0             | 22            | 0             | 0             | 0             |
-publicatio     | 0             | 0             | 0             | 0             | 62            | 6             | 2             | 0             | 9             | 0             | 0             | 0             |
-narratio       | 0             | 0             | 0             | 0             | 0             | 190           | 221           | 0             | 59            | 0             | 0             | 0             |
-dispositio     | 0             | 0             | 0             | 0             | 0             | 3             | 449           | 0             | 546           | 0             | 0             | 0             |
-sanctio        | 0             | 0             | 0             | 0             | 0             | 0             | 2             | 0             | 10            | 0             | 0             | 0             |
-corroboratio   | 0             | 0             | 0             | 0             | 0             | 0             | 5             | 0             | 265           | 2             | 3             | 0             |
-subscriptio    | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 1             | 213           | 5             | 0             |
-datatio        | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 2             | 348           | 0             |
-apprecatio     | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 3             | 70            |
+arenga         | 0             | 1             | 0             | 102           | 1             | 8             | 20            | 0             | 9             | 0             | 0             | 0             |
+publicatio     | 0             | 0             | 0             | 0             | 64            | 3             | 6             | 0             | 5             | 0             | 0             | 0             |
+narratio       | 0             | 0             | 0             | 0             | 0             | 123           | 156           | 0             | 100           | 0             | 0             | 0             |
+dispositio     | 0             | 0             | 0             | 0             | 0             | 10            | 651           | 0             | 560           | 0             | 0             | 0             |
+sanctio        | 0             | 0             | 0             | 0             | 0             | 0             | 3             | 0             | 8             | 0             | 0             | 0             |
+corroboratio   | 0             | 0             | 0             | 0             | 0             | 0             | 7             | 0             | 249           | 2             | 10            | 0             |
+subscriptio    | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 1             | 210           | 5             | 0             |
+datatio        | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 2             | 341           | 0             |
+apprecatio     | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 3             | 71            |
  
  
 The following labels are not included in the macro- and microaverages because they don't appear in the training data:
 No labels not included.
  
 **MACROAVERAGES**
-Prec: 0,7282
-Rec: 0,679
-Acc: 0,9496
-F1: 0,675
+Prec: 0,733
+Rec: 0,688
+Acc: 0,9505
+F1: 0,681
  
  
 **MICROAVERAGES**
-Prec: 0,6702
-Rec: 0,6702
-Acc: 0,9496
-F1: 0,6702
+Prec: 0,6875
+Rec: 0,6875
+Acc: 0,9505
+F1: 0,6875
  
  
 **DETAILED LABEL RESULTS**
@@ -56,46 +56,46 @@ inscriptio:
 	F1:0
 arenga:
 	Prec:1
-	Rec:0,619
-	Acc:0,9819
-	F1:0,7647
+	Rec:0,7234
+	Acc:0,9874
+	F1:0,8395
 publicatio:
-	Prec:0,9841
-	Rec:0,7848
-	Acc:0,9942
-	F1:0,8732
+	Prec:0,9846
+	Rec:0,8205
+	Acc:0,9952
+	F1:0,8951
 narratio:
-	Prec:0,8796
-	Rec:0,4043
-	Acc:0,9011
-	F1:0,5539
+	Prec:0,8542
+	Rec:0,3245
+	Acc:0,9106
+	F1:0,4704
 dispositio:
-	Prec:0,646
-	Rec:0,4499
-	Acc:0,743
-	F1:0,5304
+	Prec:0,7713
+	Rec:0,5332
+	Acc:0,7537
+	F1:0,6305
 sanctio:
 	Prec:0
 	Rec:0
-	Acc:0,9961
+	Acc:0,9964
 	F1:0
 corroboratio:
-	Prec:0,2906
-	Rec:0,9636
-	Acc:0,7876
-	F1:0,4465
+	Prec:0,2672
+	Rec:0,9291
+	Acc:0,7734
+	F1:0,415
 subscriptio:
-	Prec:0,9816
-	Rec:0,9726
+	Prec:0,9813
+	Rec:0,9722
 	Acc:0,9968
-	F1:0,9771
+	F1:0,9767
 datatio:
-	Prec:0,9694
-	Rec:0,9943
-	Acc:0,9958
-	F1:0,9817
+	Prec:0,9499
+	Rec:0,9942
+	Acc:0,9935
+	F1:0,9715
 apprecatio:
 	Prec:1
-	Rec:0,9589
+	Rec:0,9595
 	Acc:0,999
-	F1:0,979
+	F1:0,9793

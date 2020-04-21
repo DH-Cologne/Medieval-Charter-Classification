@@ -1,0 +1,30 @@
+***AVERAGE EVALUATION RESULTS FROMMon Apr 20 23:40:28 CEST 2020:***
+'Vec' = Vectorizing method
+'Tolerance' = Tolerance for position based label probability
+'Bigrams' = have bigrams been used instead of tokens?
+Test basis: 83 diplomas with 3098 sentences
+ 
+ 
+**MACRO- AND MICROAVERAGES FOR ALL TESTED CONFIGURATIONS**
+(Multiplied by 10.000)
+ 
+_________Config__________|___________Macro___________|________Micro_________|
+_Vec,_Tolerance,_Bigrams_|_Prec_|_Rec__|_Acc__|__F1__|_Prec,_Rec,_F1_|_Acc__|
+ count, 2, true          | 7400 | 7006 | 9541 | 6926 |     7102      | 9541 |
+ binary, 0, true         | 7377 | 6985 | 9537 | 6902 |     7082      | 9537 |
+ binary, 1, true         | 7417 | 7015 | 9541 | 6941 |     7102      | 9541 |
+ count, 0, true          | 7383 | 6988 | 9538 | 6906 |     7089      | 9538 |
+ count, 1, true          | 7423 | 7018 | 9542 | 6944 |     7109      | 9542 |
+ tfIdf, 2, false         | 7250 | 7008 | 9406 | 6807 |     6250      | 9406 |
+ tfIdf, 1, false         | 7232 | 6986 | 9402 | 6789 |     6230      | 9402 |
+ count, 1, false         | 7337 | 6878 | 9498 | 6808 |     6834      | 9498 |
+ binary, 0, false        | 7317 | 6871 | 9503 | 6800 |     6868      | 9503 |
+ binary, 2, false        | 7330 | 6880 | 9505 | 6810 |     6875      | 9505 |
+ tfIdf, 2, true          | 7020 | 6767 | 9388 | 6534 |     6138      | 9388 |
+ tfIdf, 0, true          | 6990 | 6744 | 9386 | 6500 |     6125      | 9386 |
+ count, 0, false         | 7328 | 6869 | 9497 | 6800 |     6827      | 9497 |
+ tfIdf, 0, false         | 7250 | 7008 | 9406 | 6807 |     6250      | 9406 |
+ tfIdf, 1, true          | 6999 | 6750 | 9386 | 6509 |     6128      | 9386 |
+ binary, 2, true         | 7393 | 7003 | 9539 | 6922 |     7095      | 9539 |
+ count, 2, false         | 7337 | 6878 | 9498 | 6808 |     6834      | 9498 |
+ binary, 1, false        | 7330 | 6880 | 9505 | 6810 |     6875      | 9505 |
