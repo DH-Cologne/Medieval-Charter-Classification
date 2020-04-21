@@ -1,6 +1,0 @@
-\([mM]onogram+a*\.*\), monogramma
-\(M\.*\), monogramma
-\(.*S[\w]*.*\), sealsign
-\(C\.*\), chrismon
-\([Cc]hrismon\.*\), chrismon
-\(P\.*\), chrismon
