@@ -36,3 +36,8 @@ Veränderungen am Code oder an den Trainingsdokumenten im Gegensatz zum in der t
 - 1 Urkunde Ottos II. von 972, die wortwörtlich eine Urkunde seines Vaters kopiert, der diese am selben Tag ausstellte
 - 2 Fälschungen bzw. vermutete Fälschungen
 -> Daraus folgt, dass das Korpus nun 83 Urkunden enthält.
+
+21.04.2020: Überarbeitung der Trainingsbasis
+- Überarbeitung der Trainingsdokumente im Hinblick auf die Grenze zwischen *narratio* und *dispositio*, da die vorherigen Grenzen teils nicht korrekt gesetzt waren.
+- Update der Kopien der Evaluationsergebnisse: Da eine fehlerhafte Trainingsbasis die Evaluationswerte des Programms sowohl zum Positiven als auch zum Negativen verfälschen kann, wurde das Programm erneut auf das verbesserte Korpus angewendet und die im Zuge dessen ausgegebenen Evaluationsdateien in das Repository überführt.
+- Im Zuge dessen wurde der Evaluationsklasse eine Funktion hinzugefügt, die neben den Ergebnisdateien für einzelne Konfigurationen auch eine Datei mit der Gesamtübersicht über die Ergebnisse aller Konfigurationen erstellt.
