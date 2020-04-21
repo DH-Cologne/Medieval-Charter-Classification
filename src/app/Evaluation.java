@@ -4,8 +4,12 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import classification.DiplomaticClassifier;
@@ -59,6 +63,7 @@ public class Evaluation {
 	private List<DiplomaticLabel> labels;
 
 	private int sentenceCount = 0;
+	private Map<ClassificationConfig, List<Double>> averageResults;
 	
 	/**
 	 * @param evalResultPath Ordner, in dem die Ergebnisse der Evaluation gespeichert werden sollen.
@@ -69,6 +74,7 @@ public class Evaluation {
 		// Initialisierung aller möglichen Evaluationsszenarien
 		this.initializeConfigList(2);	
 		this.pp = new Preprocessor(resolverPath, abbreviationPath, capitalLetterPath, paranthesisPath);
+		this.averageResults = new HashMap<ClassificationConfig, List<Double>>();
 	}
 	
 	
@@ -104,18 +110,32 @@ public class Evaluation {
 		for(ClassificationConfig config : configSet){
 			System.out.println("CLASSIFICATION AND EVALUATION FOR CONFIGURATION "+i+" OF "+configCount);
 			Integer[][] confusionmatrix = generateConfusionMatrix(config);
+			
 			System.out.println("EVALUATION_APP: Calculating evaluation results...");
 			List<LabelEvaluationResult> labelResults = getLabelEvaluationResults(confusionmatrix);
 			MacroAverageResult mar = new MacroAverageResult(labelResults);
 			MicroAverageResult mir = new MicroAverageResult(labelResults);
 			printEvaluationResultsToFile(config, confusionmatrix, labelResults, mar, mir);
+			
+			List<Double> avResults = new ArrayList<>();
+			avResults.add(mar.getPrecision());
+			avResults.add(mar.getRecall());
+			avResults.add(mar.getAccuracy());
+			avResults.add(mar.getF1Value());
+			avResults.add(mir.getPrecision());
+			avResults.add(mir.getAccuracy());
+			averageResults.put(config, avResults);
+			
 			i++;
 			System.out.println();
 		}
 
+		printAverageEvaluationResultsToFile();
+		
 		System.out.println("Finished evaluation.");
 		
 	}
+
 
 	/**
 	 * Erstellt für alle möglichen Kombinationen an Konfigurationselementen eine Konfiguration und fügt sie der configList des Objekts hinzu.
@@ -345,6 +365,65 @@ public class Evaluation {
 			lines.add("\tRec:"+df.format(result.getRecall()));
 			lines.add("\tAcc:"+df.format(result.getAccuracy()));
 			lines.add("\tF1:"+df.format(result.getF1Value()));
+		}
+		
+		ReaderWriter.writeLineByLineToFile(lines, filePath);
+		
+	}
+	
+	private void printAverageEvaluationResultsToFile() {
+		
+		DecimalFormat df = new DecimalFormat("0000");
+		String filePath = evalResultPath+"AllAverageEvaluationResults.txt";
+		System.out.println("EVALUATION_APP: Generating total evaluation result output and printing it to file '"+filePath+"'...");
+
+		String header1 = "_________Config__________"+"|"+"___________Macro___________"+"|"+"________Micro_________"+"|";
+		String header2 = "_Vec,_Tolerance,_Bigrams_"+"|"+"_Prec_|_Rec__|_Acc__|__F1__"+"|"+"_Prec,_Rec,_F1_"+"|"+"_Acc__"+"|";
+		
+		List<String> lines = new ArrayList<>();
+		lines.add("***AVERAGE EVALUATION RESULTS FROM"+(new Date())+":***");
+		lines.add("'Vec' = Vectorizing method");
+		lines.add("'Tolerance' = Tolerance for position based label probability");
+		lines.add("'Bigrams' = have bigrams been used instead of tokens?");
+		lines.add("Test basis: "+testData.size()+" diplomas with "+sentenceCount+ " sentences");
+		lines.add(" ");
+		lines.add(" ");
+
+
+		lines.add("**MACRO- AND MICROAVERAGES FOR ALL TESTED CONFIGURATIONS**");
+		lines.add("(Multiplied by 10.000)");
+		lines.add(" ");
+		lines.add(header1);
+		lines.add(header2);
+		
+		for(Entry<ClassificationConfig, List<Double>> e : averageResults.entrySet()){
+			
+			ClassificationConfig config = e.getKey();
+			List<Double> values = e.getValue();
+
+			String tolerance = ""+config.getSequProbsTolerance();
+			String bigrams = Boolean.toString(config.getUseBigramsInsteadOfTokens());
+			String vectorType = config.getVectorType().name();
+
+			String line = " "+vectorType+", "+tolerance+", "+bigrams;
+			while(line.length() < 25) {
+				line+=" ";
+			}
+			
+			line+="|";
+			
+			for(int i = 0; i < values.size(); i++) {
+				
+				Double value = values.get(i);
+				
+				if(i == 4){
+					line+="     "+df.format(value*10000)+"      |";
+				} else{
+					line+=" "+df.format(value*10000)+" |";
+				}
+			}
+
+			lines.add(line);
 		}
 		
 		ReaderWriter.writeLineByLineToFile(lines, filePath);
