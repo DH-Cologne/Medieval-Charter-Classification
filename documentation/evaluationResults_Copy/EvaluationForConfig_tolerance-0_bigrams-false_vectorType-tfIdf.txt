@@ -1,0 +1,101 @@
+***EVALUATION RESULTS FOR CONFIG:***
+Tolerance for position based label probability: 0
+Use bigrams instead of tokens: false
+Vectorizing method: tfIdf
+Test basis: 83 diplomas with 3098 sentences
+ 
+ 
+**CONFUSION MATRIX**
+   true\pred   | invocatio     | intitulatio   | inscriptio    | arenga        | publicatio    | narratio      | dispositio    | sanctio       | corroboratio  | subscriptio   | datatio       | apprecatio    |
+invocatio      | 136           | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             |
+intitulatio    | 0             | 79            | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             |
+inscriptio     | 0             | 0             | 0             | 0             | 0             | 0             | 1             | 0             | 0             | 0             | 0             | 0             |
+arenga         | 0             | 1             | 0             | 117           | 1             | 2             | 8             | 3             | 9             | 0             | 0             | 0             |
+publicatio     | 0             | 0             | 0             | 0             | 70            | 0             | 1             | 1             | 6             | 0             | 0             | 0             |
+narratio       | 0             | 0             | 0             | 0             | 0             | 166           | 104           | 6             | 101           | 0             | 2             | 0             |
+dispositio     | 0             | 0             | 0             | 0             | 0             | 22            | 416           | 11            | 759           | 6             | 7             | 0             |
+sanctio        | 0             | 0             | 0             | 0             | 0             | 0             | 2             | 1             | 7             | 1             | 0             | 0             |
+corroboratio   | 0             | 0             | 0             | 0             | 0             | 0             | 2             | 1             | 238           | 15            | 12            | 0             |
+subscriptio    | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 1             | 208           | 7             | 0             |
+datatio        | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 3             | 1             | 339           | 0             |
+apprecatio     | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 0             | 2             | 72            |
+ 
+ 
+The following labels are not included in the macro- and microaverages because they don't appear in the training data:
+No labels not included.
+ 
+**MACROAVERAGES**
+Prec: 0,725
+Rec: 0,7008
+Acc: 0,9406
+F1: 0,6807
+ 
+ 
+**MICROAVERAGES**
+Prec: 0,625
+Rec: 0,625
+Acc: 0,9406
+F1: 0,625
+ 
+ 
+**DETAILED LABEL RESULTS**
+invocatio:
+	Prec:1
+	Rec:1
+	Acc:1
+	F1:1
+intitulatio:
+	Prec:0,9875
+	Rec:1
+	Acc:0,9997
+	F1:0,9937
+inscriptio:
+	Prec:0
+	Rec:0
+	Acc:0,9997
+	F1:0
+arenga:
+	Prec:1
+	Rec:0,8298
+	Acc:0,9923
+	F1:0,907
+publicatio:
+	Prec:0,9859
+	Rec:0,8974
+	Acc:0,9971
+	F1:0,9396
+narratio:
+	Prec:0,8737
+	Rec:0,438
+	Acc:0,9235
+	F1:0,5835
+dispositio:
+	Prec:0,779
+	Rec:0,3407
+	Acc:0,7021
+	F1:0,4741
+sanctio:
+	Prec:0,0435
+	Rec:0,0909
+	Acc:0,9897
+	F1:0,0588
+corroboratio:
+	Prec:0,2117
+	Rec:0,8881
+	Acc:0,7043
+	F1:0,342
+subscriptio:
+	Prec:0,9004
+	Rec:0,963
+	Acc:0,99
+	F1:0,9306
+datatio:
+	Prec:0,9187
+	Rec:0,9883
+	Acc:0,989
+	F1:0,9522
+apprecatio:
+	Prec:1
+	Rec:0,973
+	Acc:0,9994
+	F1:0,9863

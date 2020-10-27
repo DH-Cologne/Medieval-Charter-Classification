@@ -4,7 +4,7 @@ Program that allows to detect and classify the segments of medieval royal charte
 # Erkennung und Klassifizierung der Formularbestandteile mittelalterlicher Königsurkunden #
 Dieses Repository enthält den Code für ein Programm, welches mittelalterliche Königsurkunden, die in Form von CEI-XML-Dateien vorliegen, in die Abschnitte des Urkundenformulars zerlegen, diese klassifizieren und annotieren kann.
 
-Eine dataillierte **technische Dokumentation sowie Evaluation** des Programms befindet sich unter documentation/Technische_Dokumentation.pdf. Am Ende dieser Readme sind unter "Änderungen" alle Eingriffe aufgelistet, die nach Anfertigung dieser Dokumentation vorgenommen worden sind. Unter documentation/evaluationResults_Kopie befinden sich außerdem .txt-Dateien, die **die genauen Evaluationswerte** (Recall, Precision, Accuracy, F1-Score, Micro- und Macro-Averages) für verschiedene Programmkonfigurationen enthalten. Die Evaluationsdateien werden bereitgestellt für den Fall, dass es aus technischen Gründen nicht möglich sein sollte, den Programmablauf in voller Funktion nachzubilden, siehe dazu unten "Benutzungshinweis".
+Eine dataillierte **technische Dokumentation sowie Evaluation** des Programms befindet sich unter documentation/Technische_Dokumentation.md. Am Ende dieser Readme sind unter "Änderungen" alle Eingriffe aufgelistet, die nach Anfertigung dieser Dokumentation vorgenommen worden sind. Unter documentation/evaluationResults_Copy befinden sich außerdem .txt-Dateien, die **die genauen Evaluationswerte** (Recall, Precision, Accuracy, F1-Score, Micro- und Macro-Averages) für verschiedene Programmkonfigurationen enthalten. Die Evaluationsdateien werden bereitgestellt für den Fall, dass es aus technischen Gründen nicht möglich sein sollte, den Programmablauf in voller Funktion nachzubilden, siehe dazu unten "Benutzungshinweis".
 
 Die **Trainingsdaten** für das dazu benutzte Machine Learning müssen CEI-annotierte Urkunden mit Volltext sein, in denen auch die Formularbestandteile mit den entsprechenden Tags (\<protocol\>, \<invocatio\>, \<dispositio\> etc.) ausgezeichnet sind. Die Dateien müssen im Ordner data/testData liegen und können dort in weitere Unterordner aufgeteilt sein befinden.
 
@@ -36,3 +36,8 @@ Veränderungen am Code oder an den Trainingsdokumenten im Gegensatz zum in der t
 - 1 Urkunde Ottos II. von 972, die wortwörtlich eine Urkunde seines Vaters kopiert, der diese am selben Tag ausstellte
 - 2 Fälschungen bzw. vermutete Fälschungen
 -> Daraus folgt, dass das Korpus nun 83 Urkunden enthält.
+
+21.04.2020: Überarbeitung der Trainingsbasis
+- Überarbeitung der Trainingsdokumente im Hinblick auf die Grenze zwischen *narratio* und *dispositio*, da die vorherigen Grenzen teils nicht korrekt gesetzt waren.
+- Update der Kopien der Evaluationsergebnisse: Da eine fehlerhafte Trainingsbasis die Evaluationswerte des Programms sowohl zum Positiven als auch zum Negativen verfälschen kann, wurde das Programm erneut auf das verbesserte Korpus angewendet und die im Zuge dessen ausgegebenen Evaluationsdateien in das Repository überführt.
+- Im Zuge dessen wurde der Evaluationsklasse eine Funktion hinzugefügt, die neben den Ergebnisdateien für einzelne Konfigurationen auch eine Datei mit der Gesamtübersicht über die Ergebnisse aller Konfigurationen erstellt.
