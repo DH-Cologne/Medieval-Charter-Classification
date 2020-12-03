@@ -1,5 +1,8 @@
 # Medieval-Charter-Classification
 Program that allows to detect and classify the segments of medieval royal charters according to their diplomatic formulae.
+For more information regarding the scientific background as well as the program and the training data see also the **corresponding paper**:
+
+Alina Ostrowski: [*Automatische Erkennung und Klassifikation von Formularbestandteilen in Königsurkunden. Zur Aufbereitung digitaler Urkundenkorpora in der Mediävistik*](https://www.vr-elibrary.de/doi/10.7788/9783412520663.139), in: Étienne Doublier, Daniela Schulz and Dominik Trump (Ed.): *Die Historischen Grundwissenschaften heute. Tradition - Methodische Vielfalt - Neuorientierung*, Wien/Köln/Weimar 2021, p. 139-166
 
 # Erkennung und Klassifizierung der Formularbestandteile mittelalterlicher Königsurkunden #
 Dieses Repository enthält den Code für ein Programm, welches mittelalterliche Königsurkunden, die in Form von CEI-XML-Dateien vorliegen, in die Abschnitte des Urkundenformulars zerlegen, diese klassifizieren und annotieren kann.
